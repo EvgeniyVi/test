@@ -1,0 +1,56 @@
+.container {
+  background-color: #f1f3f6;
+  width: 90%;
+  margin: auto;
+  min-height: 75%;
+  padding-bottom: 60px;
+  padding-top: auto;
+  margin-bottom: 20px;
+  padding-top: 5px;
+}
+.app {
+  width: 95%;
+  margin: auto;
+}
+.header_invoices {
+  border-left: 2px solid gray;
+}
+.header_invoices > p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  overflow: hidden;
+}
+.header_invoices > p:before,
+.header_invoices > p:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3px;
+  background: gray;
+  border: solid #f1f3f6;
+  border-width: 0 10px;
+}
+.header_invoices > p:before {
+  margin-left: -100%;
+}
+.header_invoices > p:after {
+  margin-right: -100%;
+}
+.button_add {
+  background-color: blue;
+  width: 75px;
+  height: 25px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.add_new {
+  background-color: #fff;
+  padding-left: 10px;
+}
+.add_new > button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

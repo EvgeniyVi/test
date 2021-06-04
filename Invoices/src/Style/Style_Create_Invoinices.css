@@ -1,0 +1,117 @@
+.create_invoices {
+  margin: auto;
+}
+.form {
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+.wrapper {
+  width: 95%;
+  border: 1px solid gray;
+  margin: auto;
+}
+.number > input {
+  width: 85%;
+  height: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  margin: 15px;
+}
+
+#number:invalid {
+  border: 2px dashed red;
+}
+#number:invalid:focus {
+  background-image: linear-gradient(pink, lightgreen);
+}
+.number {
+  width: 50%;
+}
+.date_created {
+  width: 50%;
+}
+.supplied_date > input {
+  width: 43%;
+  height: 20px;
+  margin: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+.date_created > input {
+  width: 85%;
+  height: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  margin: 15px;
+}
+.comment > input {
+  width: 93%;
+  height: 20px;
+  margin: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  resize: both;
+}
+.inline_block {
+  display: flex;
+  margin-bottom: 15px;
+}
+.button_send {
+  float: right;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  background-color: blue;
+  width: 20x;
+  height: 30x;
+  border-radius: 2x;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.create_invoices > p {
+  background-color: #f1f3f6;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  overflow: hidden;
+  padding-left: 10px;
+  border-left: 2px solid gray;
+}
+
+.create_invoices > p:before,
+.create_invoices > p:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3px;
+  background: gray;
+  border: solid #f1f3f6;
+  border-width: 0 10px;
+}
+.create_invoices > p:before {
+  margin-left: -100%;
+}
+.create_invoices > p:after {
+  margin-right: -100%;
+}
+
+.number > label {
+  font-weight: 700;
+  margin: 15px;
+}
+.date_created > label {
+  font-weight: 700;
+  margin: 15px;
+}
+.supplied_date > label {
+  font-weight: 700;
+  margin: 15px;
+}
+.comment > label {
+  font-weight: 700;
+  margin: 15px;
+}
