@@ -2,20 +2,19 @@ import { React, Component } from "react";
 import "./Style/Style_App.css";
 import Table_Invoices from "./components/Table_Invoices";
 import Create_Invoices from "./components/Create_Invoices";
-import ReactDOM from "react-dom";
+import Popup from "reactjs-popup";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: [],
-      isOpened: false,
+      data: []
     };
   }
 
   componentDidMount() {
     this.getLists();
-  }//вызов функции во время загрузки страницы
+  } //вызов функции во время загрузки страницы
 
   getLists() {
     try {
@@ -31,13 +30,6 @@ class App extends Component {
     }
   }
 
-  show() { // скрыть и показать блок который добавляет новые счета
-    this.setState({ isOpened: true });
-  }
-  hide() {
-    this.setState({ isOpened: false });
-  }
-
   render() {
     return (
       <div className="container">
@@ -48,21 +40,26 @@ class App extends Component {
           <div className="add_new">
             <span>Actions</span>
             <br />
-            <button onClick={() => this.show()} className="button_add">
-              Add New
-            </button>
+
+            <Popup
+              trigger={<button className="button_add"> Add New</button>}
+            >
+              <Create_Invoices
+                upload={() => this.getLists()} // передача функции для обновления страницы
+              />
+            </Popup>
           </div>
 
           <Table_Invoices
-            upload={() => this.getLists()}// передача функции для обновления страницы
-            data={this.state.data}// 
+            upload={() => this.getLists()} // передача функции для обновления страницы
+            data={this.state.data} //
           />
-          {this.state.isOpened ? (
+          {/*  {this.state.isOpened ? (
             <Create_Invoices
               upload={() => this.getLists()}// передача функции для обновления страницы
               view={() => this.hide()}// скрыть и показать блок который добавляет новые счета
             />
-          ) : null}
+          ) : null} */}
         </div>
       </div>
     );

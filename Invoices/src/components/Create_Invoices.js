@@ -35,7 +35,8 @@ class Create_Invoices extends Component {
     e.target.type = "text";
   }
 
-  async createList() {
+  async createList(e) {
+
     if (
       this.state.number == "" &&
       this.state.date_created == "" &&
@@ -58,7 +59,7 @@ class Create_Invoices extends Component {
           comment: this.state.comment,
         }),
       });
-      this.props.view();
+    
       this.props.upload();//обновление страницы после изменения файла db.json
     }
   }
@@ -130,7 +131,7 @@ class Create_Invoices extends Component {
               />
             </div>
 
-            <button onClick={() => this.createList()} className="button_send">
+            <button onClick={() => this.createList()}  className="button_send">
               Send
             </button>
           </div>
