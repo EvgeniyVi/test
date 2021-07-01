@@ -1,0 +1,61 @@
+.wrapper {
+  width: 85%;
+  margin: auto;
+}
+.header {
+  display: flex;
+}
+.full_name {
+  font-size: 45px;
+  color: #edd4b2;
+  width: 60%;
+  padding-top: 50px;
+}
+.photo {
+  float: right;
+  padding-top: 25px;
+}
+.position {
+  font-size: 15px;
+  color: #fff;
+}
+#table {
+  display: table;
+  white-space: pre-line; /* не нужен <br> */
+  word-wrap: break-word; /* чтобы слова переносились на маленьком экране */
+  color: #c9d6be;
+}
+#flex {
+  display: flex;
+}
+.left_block {
+  width: 40%;
+}
+.left_block > div {
+  padding: 15px;
+}
+.right_block {
+  width: 70%;
+}
+.right_block > div {
+  padding: 15px;
+  margin-left: 150px;
+}
+.block {
+  background-color: #413c38;
+  width: 60%;
+  margin: auto;
+  padding: 15px;
+}
+#color {
+  color: #edd4b2;
+  font-size: 20px;
+}
+#small_title {
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: italic;
+}
+.vcs {
+  color: #c9d6be;
+}
