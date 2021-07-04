@@ -18,5 +18,5 @@ class FizzBuzzDetector {
 
 const filterArticle  = new FizzBuzzDetector(text);
 
-console.log(filterArticle.getOverlappings());
+
 
