@@ -1,30 +1,27 @@
 
 
-const text = "Соображения высшего порядка, а также курс на социально ориентированный национальный проект обеспечивает актуальность экономической целесообразности принимаемых решений. Не следует, однако, забывать о том, что курс на социально ориентированный национальный проект влечет за собой процесс внедрения и модернизации ключевых компонентов планируемого обновления? Значимость этих проблем настолько очевидна, что реализация намеченного плана развития требует от нас анализа форм воздействия!".toLowerCase();
+ const text = "Lorem Ipsum is simply  it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum".toLowerCase();
 
-class FizzBuzzDetector {
+
+ class FizzBuzzDetector {
   constructor(article) {
     this.article = article;
   }
 
   getOverlappings() {
-    //Converting to an symbol array
-    let convertToSymbolArray = this.article.split("");
-    for (let i = 3 - 1; i < convertToSymbolArray.length - 1; i += 3) {
-      if (convertToSymbolArray[i] === " ") {
-        convertToSymbolArray[i] = " ";
-      } else {
-        convertToSymbolArray[i] = "FIZZ";
-      }
-    }
-    //Converting to string
-    let convertToString = convertToSymbolArray.join("");
-
     //Converting to word array
-    let convertToWordArray = convertToString.split(" ");
+    let convertToWordArray = this.article.split(" ");
 
-    for (let i = 5 - 1; i < convertToWordArray.length - 1; i += 5) {
-      convertToWordArray[i] = "BUZZ";
+    for (let i = 0; i < convertToWordArray.length; i++) { // itteration word
+      if (i > 0 && i % 5 === 0) { // replace every fifth word
+        convertToWordArray[i] = "BUZZ";
+        continue; // next itteration
+      }
+      var convertToSymbolArray = convertToWordArray[i].split(''); // share into the symbol
+      for (let i = 2; i < convertToSymbolArray.length; i += 3) {
+          convertToSymbolArray[i] = "FIZZ"; // replace every third letter
+      }
+      convertToWordArray[i] = convertToSymbolArray.join(''); 
     }
     return convertToWordArray.join(" ");
   }
@@ -39,20 +36,23 @@ class ReverseString{
   constructor(letter){
     this.letter = letter;
   }
-  revers(){
-    if(this.letter == '' || this.letter == ' '){
+  getReversLetter(){
+    if(this.letter == '' || this.letter == ' '){// check on empty
       console.log("Error:String is empty");
-    }else if(!isNaN(this.letter)){
+    }else if(!isNaN(this.letter)){// check on number
       console.log("Error");
     }
     else{
-      let reverseLetter = this.letter.split("");
-      const reverse = reverseLetter.reverse();
-      console.log(reverse.join(''));
+      let convertToArray = this.letter.split("");
+      let reversToLetter = convertToArray.reverse();
+      return reversToLetter.join('');
     }
   }
 }
 
 const newString = new ReverseString(text);
 
-// console.log(newString.revers());
+// console.log(newString.getReversLetter());
+
+
+
