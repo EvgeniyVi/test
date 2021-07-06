@@ -1,4 +1,6 @@
-const text = "Привет иногда бывает грустно но не всегда конечно".toLowerCase();
+
+
+const text = "Соображения высшего порядка, а также курс на социально ориентированный национальный проект обеспечивает актуальность экономической целесообразности принимаемых решений. Не следует, однако, забывать о том, что курс на социально ориентированный национальный проект влечет за собой процесс внедрения и модернизации ключевых компонентов планируемого обновления? Значимость этих проблем настолько очевидна, что реализация намеченного плана развития требует от нас анализа форм воздействия!".toLowerCase();
 
 class FizzBuzzDetector {
   constructor(article) {
@@ -8,17 +10,13 @@ class FizzBuzzDetector {
   getOverlappings() {
     //Converting to an symbol array
     let convertToSymbolArray = this.article.split("");
-
-    for (let i = 3; i < convertToSymbolArray.length-1 ; i +=3) {
-      if (convertToSymbolArray[i] == " " ) {
-        convertToSymbolArray[i] = "+";
+    for (let i = 3 - 1; i < convertToSymbolArray.length - 1; i += 3) {
+      if (convertToSymbolArray[i] === " ") {
+        convertToSymbolArray[i] = " ";
       } else {
         convertToSymbolArray[i] = "FIZZ";
       }
     }
-
-    console.log(convertToSymbolArray);    
-
     //Converting to string
     let convertToString = convertToSymbolArray.join("");
 
@@ -31,30 +29,7 @@ class FizzBuzzDetector {
     return convertToWordArray.join(" ");
   }
 }
-  
+
 const filterArticle = new FizzBuzzDetector(text);
 
 // console.log(filterArticle.getOverlappings());
-
-
-class ReverseString{
-  constructor(letter){
-    this.letter = letter;
-  }
-  revers(){
-    if(this.letter == '' || this.letter == ' '){
-      console.log("Error:String is empty");
-    }else if(!isNaN(this.letter)){
-      console.log("Error");
-    }
-    else{
-      let reverseLetter = this.letter.split("");
-      const reverse = reverseLetter.reverse();
-      console.log(reverse.join(''));
-    }
-  }
-}
-
-const newString = new ReverseString(text);
-
-// console.log(filterArticle.revers());
