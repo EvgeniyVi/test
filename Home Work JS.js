@@ -33,3 +33,26 @@ class FizzBuzzDetector {
 const filterArticle = new FizzBuzzDetector(text);
 
 // console.log(filterArticle.getOverlappings());
+
+
+class ReverseString{
+  constructor(letter){
+    this.letter = letter;
+  }
+  revers(){
+    if(this.letter == '' || this.letter == ' '){
+      console.log("Error:String is empty");
+    }else if(!isNaN(this.letter)){
+      console.log("Error");
+    }
+    else{
+      let reverseLetter = this.letter.split("");
+      const reverse = reverseLetter.reverse();
+      console.log(reverse.join(''));
+    }
+  }
+}
+
+const newString = new ReverseString(text);
+
+// console.log(newString.revers());
