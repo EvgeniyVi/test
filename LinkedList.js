@@ -14,13 +14,13 @@ class LinkedList {
   }
 
   add(data) {
-    let node = new Node(data);
+    let node = new Node(data);//new node
     if (!this.head) {
-      this.head = node;
-      this.tail = node;
+      this.head = node;//first element node
+      this.tail = node; //last element node
     } else {
-      this.tail.next = node;
-      this.tail = node;
+      this.tail.next = node;//next element node
+      this.tail = node;//last element node
     }
     this.length++;
     return this;
@@ -74,7 +74,7 @@ class LinkedList {
   }
 }
 
-// let SyngleLinkedList = new LinkedList();
+let SyngleLinkedList = new LinkedList();
 // SyngleLinkedList.add(1);
 // SyngleLinkedList.add(2);
 // SyngleLinkedList.reverse();
@@ -82,92 +82,71 @@ class LinkedList {
 
 class Stack {
   constructor() {
-    this.stack = [];
-    this.top = 0;
+    this.elements = [];
   }
 
   // Adds a value to the end of the Stack
-  push(data) {
-    this.stack.push(data);
-    this.top += 1;
+  push(elements) {
+    this.elements.push(elements);
   }
 
   // Returns and removes the last element of the Stack
   pop() {
-    if (this.top !== 0) {
-      this.top -= 1;
-      return this.stack.pop();
+    return this.elements.pop();
+  }
+  
+  peek() {
+    if (this.elements.length == 0) {
+      return null;
     }
-    throw new Error("Stack Underflow");
+    return this.elements[this.elements.length - 1]
   }
-
-  // Returns the number of elements in the Stack
-  get length() {
-    return this.top;
+  getSize() {
+    return this.elements.length();
   }
-
-  // Returns true if stack is empty, false otherwise
-  get isEmpty() {
-    return this.top === 0;
+  isEmpty() {
+    return this.getSize() === 0;
   }
 }
 
-// let newStack = new Stack();
+let newStack = new Stack();
 
-// newStack.push(15);
+// newStack.push("Banana");
+// newStack.push("Orange");
+// newStack.push("Potatoes");
+// console.log(newStack);
 
-// console.log( 'Is stack empty? ', newStack.isEmpty )
+
 
 class Queue {
   constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
+    this.elements = [];
   }
-  //add new node in the list and return length list
-  enqueue(data) {
-    const node = new Node(data); // creates the node using class Node
-
-    if (this.head) {
-      // if the first Node exitsts
-      this.tail.next = node; // inserts the created node after the tail of our Queue
-      this.tail = node; // now the created node is the last node
-    } else {
-      // if there are no nodes in the Queue
-      this.head = node; // the created node is a head
-      this.tail = node; // also the created node is a tail in Queue because it is single.
-    }
-
-    this.length++; // increases the length of Queue by 1
+  enqueue(elements) {
+    this.elements.push(elements);
   }
-
-  //delete first node in list
   dequeue() {
-    const current = this.head; // saves the link to the head which we need to remove
-    this.head = this.head.next; // moves the head link to the second Node in the Queue
-    this.length--; // decreaments the length of our Queue
-
-    return current.data; // returns the removed Node's value
+    return this.elements.shift();
   }
-
-  print() {
-    let current = this.head; // saves a link to the head of the queue
-
-    while (current) {
-      // goes through each Node of the Queue
-      console.log(current.value); // prints the value of the Node in console
-      current = current.next; // moves link to the next node after head
-    }
+  peek() {
+    return this.elements[0];
   }
-  // Returns true if queue is empty, false otherwise
+  getSize() {
+    return this.elements.length;
+  }
   isEmpty() {
-    return this.length === 0;
+    return this.getSize() === 0;
   }
-  // Returns the number of elements in the queue
-  getLength() {
-    return this.length;
-  }
+
 }
-  const queue = new Queue();
-  console.log('is empty?', queue.isEmpty())
-  console.log('add 10');   queue.enqueue(10)
+const newQueue = new Queue();
+
+// newQueue.enqueue("Banana");
+// newQueue.enqueue("Orange");
+// newQueue.enqueue("Potatoes");
+
+// console.log(newQueue);
+// console.log(newQueue.dequeue());
+// console.log(newQueue.peek());
+// console.log(newQueue.isEmpty());
+// console.log(newQueue.getSize());
